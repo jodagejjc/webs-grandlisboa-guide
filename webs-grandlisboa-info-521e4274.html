@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澳门新葡京 · 轻生活指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f2f4f6;
+      color: #2c3e4f;
+      line-height: 1.7;
+      padding: 2rem 1.2rem;
+    }
+
+    .page-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* 导航 */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0.6rem 0 1.2rem;
+      border-bottom: 1px solid #dce2e8;
+      margin-bottom: 2.8rem;
+    }
+
+    .logo-area {
+      font-weight: 600;
+      font-size: 1.25rem;
+      letter-spacing: 0.5px;
+      color: #1f2b36;
+    }
+
+    .logo-area span {
+      color: #9a7b4f;
+      margin-right: 0.3rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #3d5266;
+      padding: 0.3rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #9a7b4f;
+      color: #1f2b36;
+    }
+
+    /* Hero 区 */
+    .hero {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04), 0 0 0 1px #e6eaee;
+      padding: 3rem 2.8rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #1f2b36;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .subhead {
+      font-size: 1.05rem;
+      color: #5b6f82;
+      max-width: 580px;
+      margin: 0 auto 1.4rem;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #3d5266;
+      font-size: 0.98rem;
+    }
+
+    .hero .link-sentence {
+      margin-top: 1.8rem;
+      background: #f6f8fa;
+      display: inline-block;
+      padding: 0.3rem 1.2rem 0.3rem 1.6rem;
+      border-radius: 60px;
+      border: 1px solid #dce2e8;
+      font-size: 0.95rem;
+    }
+
+    .hero a {
+      color: #9a7b4f;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #c6b394;
+    }
+
+    .hero a:hover {
+      border-bottom-style: solid;
+      color: #7b5f3a;
+    }
+
+    /* 模块卡片通用 */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 450;
+      margin-bottom: 1.6rem;
+      letter-spacing: 0.3px;
+      color: #1f2b36;
+      border-left: 4px solid #d1bc9c;
+      padding-left: 1rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin-bottom: 3.6rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 0 0 1px #e6eaee;
+      padding: 2rem 1.6rem 1.8rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06), 0 0 0 1px #d4dbe3;
+    }
+
+    .card h3 {
+      font-weight: 500;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #2a3a49;
+    }
+
+    .card .icon-placeholder {
+      display: inline-block;
+      font-size: 1.8rem;
+      margin-bottom: 0.2rem;
+      opacity: 0.7;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #3d5266;
+    }
+
+    .card .tag {
+      display: inline-block;
+      background: #eff2f5;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: #5b6f82;
+      margin-top: 0.7rem;
+      border: 1px solid #e0e5eb;
+    }
+
+    /* FAQ 摘要 */
+    .faq-section {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 0 0 1px #e6eaee;
+      padding: 2.5rem 2.8rem;
+      margin-bottom: 3rem;
+    }
+
+    .faq-section h2 {
+      font-size: 1.3rem;
+      font-weight: 450;
+      margin-bottom: 1.5rem;
+      color: #1f2b36;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #eaedf0;
+      padding: 1rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+      color: #2a3a49;
+    }
+
+    .faq-a {
+      color: #4e6378;
+      font-size: 0.93rem;
+    }
+
+    .faq-a a {
+      color: #9a7b4f;
+      text-decoration: none;
+      border-bottom: 1px dotted #c6b394;
+    }
+
+    .faq-a a:hover {
+      border-bottom-style: solid;
+    }
+
+    /* 底部 */
+    footer {
+      text-align: center;
+      padding: 2rem 0 0.8rem;
+      color: #6a7f93;
+      font-size: 0.85rem;
+      border-top: 1px solid #dce2e8;
+    }
+
+    /* 响应式 */
+    @media (max-width: 860px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.4rem;
+      }
+
+      .hero {
+        padding: 2.2rem 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+
+      .faq-section {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .hero .link-sentence {
+        font-size: 0.9rem;
+        padding: 0.2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <!-- 顶部导航 -->
+    <nav>
+      <div class="logo-area"><span>✦</span>新葡京·漫游</div>
+      <div class="nav-links">
+        <a href="#">首页</a>
+        <a href="#">生活</a>
+        <a href="#">漫游</a>
+        <a href="#">指南</a>
+      </div>
+    </nav>
+
+    <!-- Hero 介绍 -->
+    <section class="hero">
+      <h1>澳门新葡京 · 日常侧面</h1>
+      <div class="subhead">不只是地标，也是城市节奏的一部分</div>
+      <p>
+        提到澳门新葡京，很多人首先想到的是灯火与建筑。但当你真正走在葡京附近，会发现这里藏着许多安静而真实的日常片段——街角的茶餐厅、傍晚散步的本地居民、老店铺里传出的粤语交谈。这座建筑早已和周围的生活长在了一起。
+      </p>
+      <div class="link-sentence">
+        了解更完整的背景，可以看看 <a href="https://webs-grandlisboa.com">澳门新葡京</a> 的一些记录。
+      </div>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <h2 class="section-title">附近日常 · 三个切面</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="icon-placeholder">☕</div>
+        <h3>清晨 · 街坊</h3>
+        <p>七点多，附近老茶楼已经坐满。有人看报，有人聊昨晚的球赛。偶尔抬头就能看到新葡京的轮廓，但谁也不觉得突兀，它就像背景里一个安静的坐标。</p>
+        <span class="tag">生活气息</span>
+      </div>
+      <div class="card">
+        <div class="icon-placeholder">🚶</div>
+        <h3>午后 · 散步</h3>
+        <p>沿着葡京酒店外围走一圈，能看见很多细节：石阶上的光影、等车的旅客、骑着自行车送外卖的年轻人。高楼下的生活节奏，比想象中要慢半拍。</p>
+        <span class="tag">城市漫游</span>
+      </div>
+      <div class="card">
+        <div class="icon-placeholder">🌆</div>
+        <h3>黄昏 · 光影</h3>
+        <p>太阳落山前，葡京的玻璃幕墙会映出橙红色的天光。附近的小广场上，有人遛狗，有人坐着发呆。这时的地标不再是景点，而是日常的一部分。</p>
+        <span class="tag">安静瞬间</span>
+      </div>
+    </div>
+
+    <!-- 常见说明 / FAQ 摘要 -->
+    <div class="faq-section">
+      <h2>一些你可能想了解的</h2>
+      <div class="faq-item">
+        <div class="faq-q">澳门新葡京的位置方便吗？</div>
+        <div class="faq-a">它位于澳门半岛的核心区域，周边公交线路密集，步行也能到达很多老城区景点。如果不熟悉路，可以提前查一下地图，或者参考 <a href="https://webs-grandlisboa.com">澳门新葡京</a> 页面里的一些交通提示。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">附近有什么推荐的散步路线？</div>
+        <div class="faq-a">从葡京出发往南走，会经过一些安静的小街，两边是老式住宅和社区店铺。也可以往东去海边，大约走十五分钟就能看到海和远处的桥。路线不难，适合随意走走。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">这些场景适合拍照吗？</div>
+        <div class="faq-a">当然，但建议保持安静，尊重当地居民的生活节奏。早晨和傍晚的光线最好，建筑和街景会有不同的质感。记录日常比单纯打卡也许更有意思。</div>
+      </div>
+    </div>
+
+    <!-- 简单收尾 -->
+    <footer>
+      <p>一些关于澳门的零碎片段 · 不着急，慢慢逛</p>
+    </footer>
+  </div>
+</body>
+</html>
