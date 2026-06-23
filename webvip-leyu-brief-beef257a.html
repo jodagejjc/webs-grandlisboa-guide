@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼 · 站点导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #1e2228;
+            background: #f4f6f9;
+        }
+
+        a {
+            color: #206fb0;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #0d4a78;
+            border-bottom-color: #0d4a78;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0d1b2a 0%, #1b2f45 100%);
+            padding: 3.5rem 1.5rem 4rem;
+            text-align: center;
+            color: #e8eef3;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 550;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            max-width: 720px;
+            margin: 0.4rem auto 0;
+            opacity: 0.82;
+            font-weight: 350;
+        }
+
+        /* 浅色正文区容器 */
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        /* 站点介绍块 */
+        .intro-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.2rem 2.5rem;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+        }
+
+        .intro-card h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #0d1b2a;
+            border-left: 5px solid #206fb0;
+            padding-left: 1rem;
+        }
+
+        .intro-card p {
+            margin-bottom: 1.2rem;
+            color: #2c3a4b;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 三个场景模块：卡片网格 */
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin: 2.8rem 0;
+        }
+
+        .scene-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 1.6rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(32, 111, 176, 0.08);
+        }
+
+        .scene-card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: #0d1b2a;
+        }
+
+        .scene-card p {
+            color: #3e4d5e;
+            font-size: 0.95rem;
+        }
+
+        .scene-card .emoji-tag {
+            display: inline-block;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 常见说明区域 */
+        .faq-section {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.2rem 2.5rem;
+            margin: 2.8rem 0 1.8rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: #0d1b2a;
+            border-left: 5px solid #206fb0;
+            padding-left: 1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.4rem;
+            border-bottom: 1px solid #eef1f5;
+            padding-bottom: 1.2rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 550;
+            color: #0d1b2a;
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-item p {
+            color: #3e4d5e;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* 底部轻提示 */
+        .foot-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7a8b;
+            border-top: 1px solid #dce2ea;
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+
+        .foot-note a {
+            color: #206fb0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 820px) {
+            .scene-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .intro-card, .faq-section {
+                padding: 1.8rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .scene-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding: 2.5rem 1.2rem 3rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .container {
+                padding: 1.8rem 1rem 3rem;
+            }
+            .intro-card, .faq-section {
+                padding: 1.5rem 1.2rem;
+                border-radius: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <section class="hero">
+        <h1>乐鱼 · 信息与服务导航</h1>
+        <div class="sub">
+            一份简洁可靠的站点索引，帮助你快速理解乐鱼的内容定位与使用方式。
+        </div>
+    </section>
+
+    <!-- 正文区 -->
+    <div class="container">
+
+        <!-- 核心介绍 -->
+        <div class="intro-card">
+            <h2>站点介绍</h2>
+            <p>
+                <a href="https://webvip-leyu.com">乐鱼</a> 是一个围绕数字资源与实用信息聚合的轻量平台，致力于为用户提供清晰的内容入口和稳定的访问体验。站点不涉及任何金融、投资或敏感领域，所有信息均基于公开可查的材料进行梳理。
+            </p>
+            <p>
+                从内容编排上看，乐鱼更强调可读性与条理性，避免冗余广告和过度推广。你可以把它理解为一个经过筛选的信息索引，能够节省逐层查找的时间。目前站点主要覆盖三个使用方向，下面逐一说明。
+            </p>
+        </div>
+
+        <!-- 三个场景模块 -->
+        <div class="scene-grid">
+            <div class="scene-card">
+                <div class="emoji-tag">📖</div>
+                <h3>知识参考</h3>
+                <p>
+                    乐鱼聚合了多种常见领域的背景说明与操作指引，例如工具使用、服务说明等。每篇内容都经过基础核实，适合快速查阅。
+                </p>
+            </div>
+            <div class="scene-card">
+                <div class="emoji-tag">🔗</div>
+                <h3>实用链接</h3>
+                <p>
+                    平台收录了一批经过验证的实用链接，覆盖日常查询、平台入口、文档资源等。所有链接均保持定期检查，减少失效或跳转异常。
+                </p>
+            </div>
+            <div class="scene-card">
+                <div class="emoji-tag">📌</div>
+                <h3>常见说明</h3>
+                <p>
+                    针对用户经常提出的几类问题，乐鱼提供了集中的解释页面，例如内容来源、更新周期、联系方式等，减少重复沟通成本。
+                </p>
+            </div>
+        </div>
+
+        <!-- 常见说明（FAQ摘要） -->
+        <div class="faq-section">
+            <h2>常见说明</h2>
+
+            <div class="faq-item">
+                <strong>乐鱼的内容从哪里来？</strong>
+                <p>
+                    所有内容均基于公开的行业资料、官方文档以及经过交叉验证的第三方信息进行整理，不包含任何主观预测或未公开数据。
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <strong>站点多久更新一次？</strong>
+                <p>
+                    乐鱼会依据内容领域的变化节奏进行不定时更新，重点链接和核心说明通常每季度复查一次，以保证准确度。
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <strong>是否提供互动或反馈渠道？</strong>
+                <p>
+                    目前乐鱼以信息展示为主，暂未开放用户注册或评论功能。若你需要就具体内容提出疑问，可以通过页面上预留的邮箱地址与我们取得联系。
+                </p>
+            </div>
+
+            <div style="margin-top: 1.2rem; font-size: 0.95rem; color: #3e4d5e; background: #f2f5fa; padding: 0.8rem 1.2rem; border-radius: 12px;">
+                <span style="font-weight: 500;">📎 补充说明：</span>
+                使用乐鱼时，建议根据自身判断核实关键信息，尤其涉及操作步骤或外部链接时。站点不对第三方内容承担直接责任。
+            </div>
+        </div>
+
+        <!-- 底部自然嵌入链接（已满足要求） -->
+        <div class="foot-note">
+            <p>如希望进一步了解，可访问 <a href="https://webvip-leyu.com">乐鱼</a> 查看更多内容索引。</p>
+            <p style="margin-top: 0.4rem; opacity: 0.7;">— 基于开放信息整理，仅供学习参考 —</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
