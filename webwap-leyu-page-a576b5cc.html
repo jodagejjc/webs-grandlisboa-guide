@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>乐鱼 · 稳定入口 · 页面说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f0f2f5;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #1e1e2a;
+      padding: 2rem 1rem;
+    }
+    .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    /* hero 区 */
+    .hero {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02), 0 1px 4px rgba(0,0,0,0.02);
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      border: 1px solid #e6e9ef;
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 0.75rem;
+      color: #1a1c26;
+    }
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #55606b;
+      max-width: 600px;
+      margin: 0 auto 1.2rem;
+    }
+    .hero .desc {
+      background: #f7f9fc;
+      padding: 1.2rem 1.8rem;
+      border-radius: 48px;
+      display: inline-block;
+      border: 1px solid #dfe3eb;
+      font-size: 0.95rem;
+      color: #2f3742;
+    }
+    /* 卡片通用 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e6ed;
+      border-radius: 18px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      transition: box-shadow 0.15s;
+    }
+    .card:hover {
+      box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      color: #1b212b;
+    }
+    .card p {
+      color: #3d4653;
+      font-size: 0.95rem;
+    }
+    .card .tag {
+      display: inline-block;
+      background: #eceff4;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      color: #3f4a59;
+      margin-bottom: 0.7rem;
+    }
+    /* 说明区 */
+    .intro-block {
+      background: #ffffff;
+      border: 1px solid #e2e6ed;
+      border-radius: 18px;
+      padding: 2rem 2rem 1.8rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .intro-block h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #1b212b;
+    }
+    .intro-block p {
+      margin-bottom: 1rem;
+      color: #3b4452;
+    }
+    .intro-block p:last-child {
+      margin-bottom: 0;
+    }
+    /* FAQ 摘要 */
+    .faq-summary {
+      background: #ffffff;
+      border: 1px solid #e2e6ed;
+      border-radius: 18px;
+      padding: 1.8rem 2rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .faq-summary h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      color: #1b212b;
+    }
+    .faq-item {
+      margin-bottom: 1.1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eef1f6;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .faq-item .q {
+      font-weight: 500;
+      color: #1a202c;
+      margin-bottom: 0.2rem;
+    }
+    .faq-item .a {
+      color: #4a5568;
+      font-size: 0.92rem;
+    }
+    /* 底部 */
+    .footer-links {
+      background: #ffffff;
+      border: 1px solid #e2e6ed;
+      border-radius: 18px;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .footer-links p {
+      color: #4a5463;
+      font-size: 0.9rem;
+    }
+    .footer-links a {
+      color: #1e2b3f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #cbd2df;
+      transition: text-decoration-color 0.2s;
+    }
+    .footer-links a:hover {
+      text-decoration-color: #1e2b3f;
+    }
+    .footer-links .sep {
+      color: #c2cbd8;
+      margin: 0 0.6rem;
+    }
+    @media (max-width: 640px) {
+      body { padding: 1.2rem 0.75rem; }
+      .hero { padding: 2.2rem 1rem 2rem; }
+      .hero h1 { font-size: 2rem; }
+      .card-grid { gap: 1rem; }
+      .intro-block, .faq-summary, .footer-links { padding: 1.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <!-- hero 区 -->
+  <section class="hero">
+    <h1>乐鱼</h1>
+    <p class="sub">日常界面，稳定入口，简洁直达</p>
+    <div class="desc">一个汇集常用页面的轻量说明页 · 更新于 2025</div>
+  </section>
+
+  <!-- 优势区：四卡片 -->
+  <div class="card-grid">
+    <div class="card">
+      <span class="tag">访问稳定</span>
+      <h3>持续可用</h3>
+      <p>页面基于通用部署方式，入口地址长期维护，减少临时寻找的麻烦。</p>
+    </div>
+    <div class="card">
+      <span class="tag">避免混淆</span>
+      <h3>清晰标识</h3>
+      <p>通过唯一名称与页面内容相互印证，帮助您快速确认自己所在的页面环境。</p>
+    </div>
+    <div class="card">
+      <span class="tag">轻量说明</span>
+      <h3>信息精简</h3>
+      <p>没有冗长的功能列表，只保留最必要的介绍和常见问题提示。</p>
+    </div>
+    <div class="card">
+      <span class="tag">通用风格</span>
+      <h3>低干扰设计</h3>
+      <p>浅灰背景、柔和卡片、低饱和度配色，让注意力集中在内容本身。</p>
+    </div>
+  </div>
+
+  <!-- 说明区：页面切入角度 -->
+  <div class="intro-block">
+    <h2>关于这个页面</h2>
+    <p>很多时候，一个简单的页面比复杂的导航更适合日常使用。<strong>乐鱼</strong> 代表的是一种轻量化的入口思路——不需要多次跳转或记忆长串地址，只需一个稳定的位置就能继续后续操作。</p>
+    <p>本页整合了最基本的说明信息：页面定位、常见疑问、以及指向 <a href="https://webwap-leyu.com" style="color:#1e2b3f;text-decoration:underline;text-underline-offset:3px;">乐鱼</a> 的链接。所有内容均基于日常实用性编写，不涉及任何产品臆测或夸大描述。</p>
+    <p>如果您之前接触过类似风格的页面，会发现这里的布局和卡片分组都遵循直观的逻辑——优势区概括入口特点，FAQ 摘要解答常见疑惑，底部保留必要的出处说明。整体上没有多余的装饰，力求一目了然。</p>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-summary">
+    <h2>FAQ · 常见问题摘要</h2>
+    <div class="faq-item">
+      <div class="q">这个页面和「乐鱼」是什么关系？</div>
+      <div class="a">本页是一个独立的介绍页，为指向 <a href="https://webwap-leyu.com" style="color:#1e2b3f;text-decoration:underline;text-underline-offset:3px;">乐鱼</a> 提供稳定的说明环境。页面本身不嵌入其他功能，只做信息展示。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">为什么页面风格这么简洁？</div>
+      <div class="a">简洁的卡片布局和低对比度配色有助于减少视觉疲劳，同时让链接和关键文字更容易被注意到。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">链接的地址会变化吗？</div>
+      <div class="a">本页所包含的链接指向固定地址。如果有任何调整，页面内容会同步更新说明。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">我可以从哪里了解更多？</div>
+      <div class="a">直接通过页面内提供的 <a href="https://webwap-leyu.com" style="color:#1e2b3f;text-decoration:underline;text-underline-offset:3px;">乐鱼</a> 链接即可访问，无需额外步骤。</div>
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <p>
+      页面说明 · 
+      <a href="https://webwap-leyu.com">乐鱼</a>
+      <span class="sep">|</span>
+      <span style="color:#6e7b8c;">仅供示意</span>
+    </p>
+  </div>
+</div>
+</body>
+</html>
